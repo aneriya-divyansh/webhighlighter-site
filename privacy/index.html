@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Web Highlighter</title>
+<meta name="description" content="Privacy policy for Web Highlighter — what we collect, what we don't, where your data lives, and your rights.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink-900:#16140F; --ink-700:#3A362C; --ink-600:#5B564A; --ink-500:#7B756A; --ink-200:#E2DDD0; --ink-150:#ECE7DA; --ink-100:#F2EEE3; --ink-50:#FBF9F2; --paper:#FBF9F2; --yellow-300:#FCD34D; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink-900); font-family: "Geist", -apple-system, sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { color: var(--ink-900); }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 28px 0; border-bottom: 1px solid var(--ink-150); }
+  .nav { display: flex; align-items: center; gap: 14px; }
+  .nav .mark { width: 28px; height: 21px; }
+  .nav .name { font-weight: 700; font-size: 18px; letter-spacing: -0.015em; }
+  .nav .links { margin-left: auto; display: flex; gap: 20px; font-size: 14px; font-weight: 500; }
+  .nav .links a { color: var(--ink-700); text-decoration: none; }
+  .nav .links a:hover { color: var(--ink-900); }
+  main { padding: 56px 0 80px; }
+  main h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 6px; }
+  main .updated { font-size: 13px; color: var(--ink-500); margin-bottom: 32px; }
+  main h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.015em; margin: 40px 0 12px; }
+  main p { margin-bottom: 14px; color: var(--ink-700); font-size: 16px; }
+  main ul { margin: 0 0 14px 22px; color: var(--ink-700); }
+  main li { margin-bottom: 6px; }
+  main strong { color: var(--ink-900); font-weight: 600; }
+  main table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  main th, main td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--ink-150); }
+  main th { font-weight: 600; color: var(--ink-900); background: var(--ink-50); }
+  footer { padding: 40px 0; border-top: 1px solid var(--ink-150); }
+  footer .row { display: flex; align-items: center; gap: 14px; font-size: 13px; color: var(--ink-500); }
+  footer .row a { color: var(--ink-500); text-decoration: none; }
+  footer .row a:hover { color: var(--ink-900); }
+  footer .links { margin-left: auto; display: flex; gap: 18px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <svg class="mark" viewBox="0 0 22 16">
+        <path d="M 7 2 L 1 5 L 1 11 L 7 14 Z" fill="#FFFFFF" stroke="#0B0B09" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="7" y="1.5" width="13.5" height="13" rx="2.5" fill="#FCD34D" stroke="#0B0B09" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span class="name">Web Highlighter</span>
+    </a>
+    <nav class="links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: 22 May 2026</p>
+
+  <p>Web Highlighter ("we", "us", "the extension") is a Chrome browser extension that lets you save and organize text highlights from web pages. This Privacy Policy explains what we collect, why, and what we do (and don't do) with it.</p>
+  <p>We've kept this short on purpose. You should be able to read the whole thing in five minutes.</p>
+
+  <h2>What we collect</h2>
+  <p>We collect only the data needed to make the extension work for you.</p>
+
+  <p><strong>Account data</strong> (when you sign in)</p>
+  <ul>
+    <li>Your Google account email (via Google OAuth)</li>
+    <li>Your display name and avatar URL (from your Google profile, if available)</li>
+  </ul>
+
+  <p><strong>Content you save</strong></p>
+  <ul>
+    <li>The text of each highlight you create</li>
+    <li>Any notes, tags, color choices, and notebook assignments you add</li>
+    <li>The URL and page title of the page you highlighted from</li>
+    <li>Timestamps (created, updated)</li>
+    <li>A DOM "anchor" that lets us re-paint your highlight on the original page</li>
+  </ul>
+
+  <p><strong>Sharing data</strong> (only if you use the share feature)</p>
+  <ul>
+    <li>The email address you typed in when sharing a highlight</li>
+    <li>The permission level you granted (view or comment)</li>
+    <li>Comments and replies you write</li>
+  </ul>
+
+  <p><strong>Operational data</strong></p>
+  <ul>
+    <li>Limited error reports via Sentry — anonymized stack traces only, no highlight content, no URLs you visited</li>
+  </ul>
+
+  <h2>What we do NOT collect</h2>
+  <ul>
+    <li>We do <strong>not</strong> collect your browsing history.</li>
+    <li>We do <strong>not</strong> read pages you visit unless you explicitly select text and click our highlight marker.</li>
+    <li>We do <strong>not</strong> track you across websites.</li>
+    <li>We do <strong>not</strong> run ads.</li>
+    <li>We do <strong>not</strong> sell your data to anyone, ever.</li>
+    <li>We do <strong>not</strong> use your highlights to train AI models.</li>
+    <li>We do <strong>not</strong> use cookies for tracking.</li>
+  </ul>
+
+  <h2>Where your data lives</h2>
+  <p>Your data is stored in two places:</p>
+  <ol style="margin: 0 0 14px 22px; color: var(--ink-700);">
+    <li><strong>Supabase</strong> (PostgreSQL hosted in <code>ap-south-1</code>, Mumbai). All highlights, notebooks, comments, and shares live here. Row-level security ensures only you can read or modify your data.</li>
+    <li><strong>Your browser</strong> — <code>chrome.storage.local</code> caches your highlights for instant load. Cleared when you uninstall the extension or sign out.</li>
+  </ol>
+  <p>Supabase is our database provider. They are subject to their own privacy policy (<a href="https://supabase.com/privacy">supabase.com/privacy</a>).</p>
+
+  <h2>Sharing your data with third parties</h2>
+  <p>We share data with the following service providers, only to the extent needed to operate the extension:</p>
+  <table>
+    <tr><th>Provider</th><th>Purpose</th><th>Data shared</th></tr>
+    <tr><td>Supabase</td><td>Database, authentication, file storage</td><td>All account + content data</td></tr>
+    <tr><td>Google</td><td>OAuth sign-in</td><td>Your sign-in request</td></tr>
+    <tr><td>Sentry</td><td>Error reporting</td><td>Anonymized error traces</td></tr>
+  </table>
+  <p>We do not share data with advertisers, data brokers, or any party not listed above.</p>
+
+  <h2>Your rights</h2>
+  <ul>
+    <li><strong>Access</strong> — every piece of data you've saved is visible in the side panel and can be exported anytime via Settings → Export.</li>
+    <li><strong>Delete an account</strong> — Edit Profile → Delete account. This permanently removes your highlights, notebooks, comments, shares, and avatar from our servers. The deletion cascades through every related table.</li>
+    <li><strong>Change your email</strong> — Edit Profile → Email change. Supabase emails a verification link to both your old and new addresses.</li>
+  </ul>
+  <p>We comply with GDPR and CCPA. To exercise any right not covered by an in-app affordance, email <a href="mailto:support@webhighlighter.com">support@webhighlighter.com</a> and we'll respond within 30 days.</p>
+
+  <h2>Children</h2>
+  <p>Web Highlighter is not directed at children under 13 and we don't knowingly collect data from them. If you believe a child has signed up, email us and we'll delete the account.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>We'll update the "Last updated" date at the top of this page whenever the policy changes materially. For substantive changes we'll email signed-in users.</p>
+
+  <h2>Contact</h2>
+  <p>Questions, concerns, data-access requests: <strong><a href="mailto:support@webhighlighter.com">support@webhighlighter.com</a></strong></p>
+</main>
+
+<footer>
+  <div class="container row">
+    <span>© 2026 Web Highlighter</span>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:support@webhighlighter.com">Support</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

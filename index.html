@@ -1939,6 +1939,10 @@ button { font-family: inherit; }
     max-width: 880px;
     text-wrap: balance;
   }
+  .hero h1 .line,
+  .hero .lede .line {
+    display: block;
+  }
   .hero h1 .mark {
     background: linear-gradient(180deg, transparent 0%, transparent 10%, #FCD34D 10%, #FCD34D 90%, transparent 90%);
     border-bottom: 2.5px solid #E0A82C;
@@ -2151,7 +2155,7 @@ button { font-family: inherit; }
     display: inline-block;
     font-family: var(--font-mono);
     font-size: 11px;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.08em;
     color: var(--yellow-600);
     padding: 2px 12px;
@@ -2416,12 +2420,18 @@ button { font-family: inherit; }
   @media (max-width: 600px) {
     .wrap { padding: 0 20px; }
     section.hero { padding: 38px 0 56px; }
-    .hero h1 { font-size: 36px; line-height: 41px; }
+    .hero h1 { font-size: 34px; line-height: 39px; }
     .hero .lede { font-size: 17px; line-height: 25px; }
+    .feature h3 { font-size: 26px; line-height: 32px; }
+    .cta-bottom h2 { font-size: 30px; line-height: 36px; }
     section.how { padding-bottom: 72px; }
     section.everything, section.cta-bottom { padding-top: 64px; padding-bottom: 64px; }
     footer .wrap { align-items: flex-start; flex-wrap: wrap; }
     footer .links { width: 100%; margin-left: 0; }
+  }
+
+  @media (max-width: 360px) {
+    .hero h1 { font-size: 32px; line-height: 37px; }
   }
 
   /* Phones: drop the Theme and Auto-open icons from the mockup header strip,
@@ -2465,15 +2475,15 @@ button { font-family: inherit; }
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <h1>Save the sentence. <span class="mark">Find it when you need it.</span></h1>
-    <p class="lede">Highlight useful passages from articles, research, and documentation. Organize them in one place and jump back to the original page anytime.</p>
+    <h1><span class="line">Save the sentence.</span><span class="line"><span class="mark">Find it later.</span></span></h1>
+    <p class="lede"><span class="line">Highlight useful text as you read.</span><span class="line">Keep it organized and easy to find.</span></p>
     <div class="cta-row">
       <a class="btn-chrome primary" href="https://chromewebstore.google.com/detail/ahmlmggbpojiclcikmocfjajnknnjija?utm_source=item-share-cb" target="_blank" rel="noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/1280px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" width="18" height="18" style="display:block;flex:none;" />
         Add to Chrome
       </a>
     </div>
-    <p class="trust-line">Free to install · Google sign-in required for sync · No ads or AI training</p>
+    <p class="trust-line">Free to install · Google sign-in required · No ads · No AI training</p>
   </div>
 </section>
 
@@ -2485,7 +2495,7 @@ button { font-family: inherit; }
       <div class="step">
         <div class="num">1</div>
         <h3>Select</h3>
-        <p>On most web pages, including articles, research papers, guides, and documentation.</p>
+        <p>Choose useful text on most web pages.</p>
         <div class="visual">
           <div class="vis-select">
             The best ideas <span class="selected">survive contact with the page they were written on.</span>
@@ -2496,7 +2506,7 @@ button { font-family: inherit; }
       <div class="step">
         <div class="num">2</div>
         <h3>Save</h3>
-        <p>Use the save form to add a note, tags, notebook, or color. Optional Fast Save skips the form.</p>
+        <p>Add a notebook, note, tag, or color.</p>
         <div class="visual">
           <div class="vis-pill">
             <svg width="32" height="24"><use href="#brand-mark"></use></svg>
@@ -2507,7 +2517,7 @@ button { font-family: inherit; }
       <div class="step">
         <div class="num">3</div>
         <h3>Return</h3>
-        <p>When you revisit the same page, Web Highlighter restores the passage and keeps its source close by.</p>
+        <p>Open it later with the original page.</p>
         <div class="visual">
           <div class="vis-card">
             <span class="mini-mark">Survive contact with the page they were written on.</span>
@@ -2526,17 +2536,16 @@ button { font-family: inherit; }
 <section class="features" id="features">
   <div class="wrap">
     <div class="section-head">
-      <h2>Everything worth remembering, organized.</h2>
-      <p>Save useful passages, add notes and tags, and return to the full context whenever you need it.</p>
+      <h2>Keep What Matters</h2>
+      <p>Save highlights, add notes and tags, and return to the page.</p>
     </div>
 
     <!-- Feature 1 — Highlights persist -->
     <div class="feature">
       <div class="copy">
-        <span class="tag">Persistent</span>
-        <h3>Return to the passage in context.</h3>
-        <p>When you revisit the same page, Web Highlighter restores saved passages when it can, including when nearby page content has moved.</p>
-        <p>The side panel slides in beside the article so you can scan everything you've ever saved from the source you're reading right now.</p>
+        <span class="tag">Context</span>
+        <h3>Back to the Page</h3>
+        <p>Open a saved highlight with the page where you found it.</p>
       </div>
       <div class="visual">
         <div class="panel">
@@ -2594,9 +2603,8 @@ button { font-family: inherit; }
     <div class="feature reverse">
       <div class="copy">
         <span class="tag">Organize</span>
-        <h3>Notebooks and colors that mean something.</h3>
-        <p>Group highlights by project, paper, or theme. Pick a color per notebook and let it follow you across the web.</p>
-        <p>An Unsorted bucket catches everything you save in a hurry. Triage when you have time.</p>
+        <h3>Sort Your Highlights</h3>
+        <p>Sort highlights with notebooks, colors, notes, and tags.</p>
       </div>
       <div class="visual">
         <div class="nb-stack">
@@ -2629,10 +2637,9 @@ button { font-family: inherit; }
     <!-- Feature 3 — Search -->
     <div class="feature">
       <div class="copy">
-        <span class="tag">Recall</span>
-        <h3>Find any quote in seconds.</h3>
-        <p>Search across every highlight, note, tag, and source. Matches light up in pale yellow so you spot them at a glance.</p>
-        <p>Recent searches stay one keypress away.</p>
+        <span class="tag">Search</span>
+        <h3>Find It Fast</h3>
+        <p>Search every highlight, note, tag, and page title in seconds.</p>
       </div>
       <div class="visual">
         <div class="search-vis">
@@ -2664,39 +2671,39 @@ button { font-family: inherit; }
 <section class="everything">
   <div class="wrap">
     <div class="section-head">
-      <h2>Everything you need to remember what you read.</h2>
-      <p>Keep highlights, notes, tags, and page links together in Chrome's side panel.</p>
+      <h2>All in One Place</h2>
+      <p>Highlights, notes, tags, and page links—right in Chrome.</p>
     </div>
     <div class="tile-grid">
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"></path></svg></div>
-        <h3>Save Quotes</h3>
-        <p>Select text on a supported page, then review the quote and its source before saving.</p>
+        <h3>Save Highlights</h3>
+        <p>Save useful text from most web pages.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"></path></svg></div>
         <h3>Organize</h3>
-        <p>Group highlights by project. Color-code each notebook. Add tags inline.</p>
+        <p>Use notebooks, colors, notes, and tags.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></div>
         <h3>Search</h3>
-        <p>Search across every highlight, note, tag, and source. Matches light up in yellow.</p>
+        <p>Find any saved passage in seconds.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><circle cx="16" cy="9" r="2.5"></circle><path d="M3 19c0-3 3-5 6-5s6 2 6 5"></path><path d="M14 16c0-2 2-3 4-3s4 1 4 3"></path></svg></div>
         <h3>Collaborate</h3>
-        <p>Send a highlight, they reply with comments, you see them live in the panel.</p>
+        <p>Share highlights and discuss them together.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></div>
         <h3>Fast Save</h3>
-        <p>Hit the bolt to skip the form. Goes to Unsorted. Triage when you have time.</p>
+        <p>Skip the form and save straight to Unsorted.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><line x1="9" y1="5" x2="9" y2="19"></line></svg></div>
         <h3>Side Panel</h3>
-        <p>Chrome-native. Always one keyboard shortcut away, never blocking your page.</p>
+        <p>Keep your library beside the page you're reading.</p>
       </div>
     </div>
   </div>
@@ -2705,8 +2712,8 @@ button { font-family: inherit; }
 <!-- ============ BOTTOM CTA ============ -->
 <section class="cta-bottom">
   <div class="wrap">
-    <h2>Start <span class="mark">highlighting</span> in 30 seconds</h2>
-    <p>Free to install. Sign in with Google to sync your library across Chrome profiles where you use the same account.</p>
+    <h2>Start <span class="mark">Highlighting</span></h2>
+    <p>Free to install. Sign in with Google to keep your library synced.</p>
     <a class="btn-chrome primary" href="https://chromewebstore.google.com/detail/ahmlmggbpojiclcikmocfjajnknnjija?utm_source=item-share-cb" target="_blank" rel="noopener">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/1280px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" width="18" height="18" style="display:block;flex:none;" />
       Add to Chrome

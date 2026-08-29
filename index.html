@@ -2,301 +2,32 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Web Highlighter</title>
+<title>Web Highlighter — Save Quotes with Sources</title>
+<meta name="description" content="Save useful quotes from the web with their original sources. Organize, search, and reopen the context from Chrome's side panel.">
+<link rel="canonical" href="https://www.webhighlighter.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Web Highlighter — Save Quotes with Sources">
+<meta property="og:description" content="Save useful quotes with their original sources, then find and reopen the context when you need it.">
+<meta property="og:url" content="https://www.webhighlighter.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web Highlighter — Save Quotes with Sources">
+<meta name="twitter:description" content="Save useful quotes with their original sources, then find and reopen the context when you need it.">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="128x128" href="/icon-128.png">
 <link rel="apple-touch-icon" href="/icon-128.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<style>/* cyrillic-ext */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("c3e5678a-4e53-4384-9956-789fcc2e7ba8") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Web Highlighter",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Google Chrome",
+  "description": "Save web quotes with their sources, organize them, search them, and reopen the original context from Chrome's side panel.",
+  "url": "https://www.webhighlighter.com/",
+  "downloadUrl": "https://chromewebstore.google.com/detail/web-highlighter/ahmlmggbpojiclcikmocfjajnknnjija",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
-/* cyrillic */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("dd1c8ae2-1a7d-4fe1-b2dc-2246beebb04c") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("34c034c4-852c-4c52-bef3-9276b87e06f0") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("0439a284-ae42-4ab4-8135-2b8260b14777") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("c290ad44-6b5d-4d23-94ba-2709448e1b9c") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("c3e5678a-4e53-4384-9956-789fcc2e7ba8") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("dd1c8ae2-1a7d-4fe1-b2dc-2246beebb04c") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("34c034c4-852c-4c52-bef3-9276b87e06f0") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("0439a284-ae42-4ab4-8135-2b8260b14777") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("c290ad44-6b5d-4d23-94ba-2709448e1b9c") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("c3e5678a-4e53-4384-9956-789fcc2e7ba8") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("dd1c8ae2-1a7d-4fe1-b2dc-2246beebb04c") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("34c034c4-852c-4c52-bef3-9276b87e06f0") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("0439a284-ae42-4ab4-8135-2b8260b14777") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("c290ad44-6b5d-4d23-94ba-2709448e1b9c") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("c3e5678a-4e53-4384-9956-789fcc2e7ba8") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("dd1c8ae2-1a7d-4fe1-b2dc-2246beebb04c") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("34c034c4-852c-4c52-bef3-9276b87e06f0") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("0439a284-ae42-4ab4-8135-2b8260b14777") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("c290ad44-6b5d-4d23-94ba-2709448e1b9c") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fc603dae-d2ab-4834-8d6f-8344c452fa84") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("21cf4d62-5fd1-4697-9014-520679241b11") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* symbols2 */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("050ec20e-8e48-4d23-a2d4-3a844c53d115") format('woff2');
-  unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("918f3813-b0f2-4bc0-aad9-0b524f1665a3") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("a792da3c-2f55-43cc-a0c4-9670f3e9f514") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("a1ce595b-dedf-4d78-ab14-04f6a421e338") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("fc603dae-d2ab-4834-8d6f-8344c452fa84") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("21cf4d62-5fd1-4697-9014-520679241b11") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* symbols2 */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("050ec20e-8e48-4d23-a2d4-3a844c53d115") format('woff2');
-  unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("918f3813-b0f2-4bc0-aad9-0b524f1665a3") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("a792da3c-2f55-43cc-a0c4-9670f3e9f514") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Geist Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("a1ce595b-dedf-4d78-ab14-04f6a421e338") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-</style>
+</script>
 <style>/* ============================================================
    Highlighter, Design Tokens
    "Quiet workspace": warm paper, ink, single yellow accent.
@@ -347,8 +78,8 @@
   --info-border:#C6D2E2;
 
   /* ··· Type ··· */
-  --font-sans: "Geist", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   /* type scale (px / line-height) */
   --t-display: 32px;  --lh-display: 38px;
@@ -410,6 +141,21 @@ body {
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "ss01", "cv11";
 }
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 12px;
+  z-index: 9999;
+  padding: 10px 14px;
+  border-radius: var(--r-sm);
+  background: var(--ink-900);
+  color: var(--surface);
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+.skip-link:focus { transform: translateY(0); }
+a:focus-visible { outline: 3px solid var(--yellow-300); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 a { color: inherit; }
 button { font-family: inherit; }
 
@@ -2141,7 +1887,7 @@ button { font-family: inherit; }
     margin-bottom: 16px;
   }
   .tile .ico svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-  .tile h4 {
+  .tile h3 {
     font-family: var(--font-sans);
     font-size: 15.5px;
     line-height: 22px;
@@ -2214,6 +1960,13 @@ button { font-family: inherit; }
     gap: 14px;
   }
   .hero .cta-row .btn-chrome { padding: 13px 22px; font-size: 15px; }
+  .hero .trust-line {
+    margin: 14px auto 0;
+    color: var(--ink-600);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 18px;
+  }
   .hero .micro {
     font-family: var(--font-mono);
     font-size: 12px;
@@ -2401,7 +2154,7 @@ button { font-family: inherit; }
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--yellow-600);
-    padding: 0;
+    padding: 2px 12px;
     margin-bottom: 16px;
   }
   .feature h3 {
@@ -2660,6 +2413,17 @@ button { font-family: inherit; }
     nav.top .links a:not(.btn-chrome) { display: none; }
   }
 
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    section.hero { padding: 38px 0 56px; }
+    .hero h1 { font-size: 36px; line-height: 41px; }
+    .hero .lede { font-size: 17px; line-height: 25px; }
+    section.how { padding-bottom: 72px; }
+    section.everything, section.cta-bottom { padding-top: 64px; padding-bottom: 64px; }
+    footer .wrap { align-items: flex-start; flex-wrap: wrap; }
+    footer .links { width: 100%; margin-left: 0; }
+  }
+
   /* Phones: drop the Theme and Auto-open icons from the mockup header strip,
      and scale the whole panel down uniformly so it fits a narrow screen while
      keeping every element at its global (desktop) proportions. */
@@ -2672,6 +2436,7 @@ button { font-family: inherit; }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- shared brand SVG -->
 <svg width="0" height="0" style="position:absolute;">
@@ -2684,10 +2449,10 @@ button { font-family: inherit; }
 <!-- ============ NAV ============ -->
 <div class="wrap">
   <nav class="top">
-    <a class="brand" href="#"><svg><use href="#brand-mark"></use></svg> Web Highlighter</a>
+    <a class="brand" href="/"><svg><use href="#brand-mark"></use></svg> Web Highlighter</a>
     <div class="links">
-      <a href="#features">Features</a>
       <a href="#how">How it works</a>
+      <a href="#features">Features</a>
       <a class="btn-chrome" href="https://chromewebstore.google.com/detail/ahmlmggbpojiclcikmocfjajnknnjija?utm_source=item-share-cb" target="_blank" rel="noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/1280px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" width="16" height="16" style="display:block;flex:none;" />
         Add to Chrome
@@ -2696,33 +2461,31 @@ button { font-family: inherit; }
   </nav>
 </div>
 
+<main id="main-content">
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Free · Chrome extension</span>
-    <h1>Save what you read on the web. <span class="mark">Find it later</span> right where you left it.</h1>
-    <p class="lede">Highlight any passage on any page. We paint it yellow, file it in a notebook, and bring it back when you return.</p>
+    <h1>Save the sentence. <span class="mark">Find it when you need it.</span></h1>
+    <p class="lede">Highlight useful passages from articles, research, and documentation. Organize them in one place and jump back to the original page anytime.</p>
     <div class="cta-row">
       <a class="btn-chrome primary" href="https://chromewebstore.google.com/detail/ahmlmggbpojiclcikmocfjajnknnjija?utm_source=item-share-cb" target="_blank" rel="noopener">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/1280px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" width="18" height="18" style="display:block;flex:none;" />
         Add to Chrome
       </a>
-      <span class="micro">
-        <svg class="check" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>
-        Free forever
-      </span>
     </div>
+    <p class="trust-line">Free to install · Google sign-in required for sync · No ads or AI training</p>
   </div>
 </section>
 
 <!-- ============ HOW IT WORKS (under hero, 3 steps) ============ -->
 <section class="how" id="how">
   <div class="wrap">
+    <h2 class="sr-only">How Web Highlighter works</h2>
     <div class="steps">
       <div class="step">
         <div class="num">1</div>
-        <h3>Select any text</h3>
-        <p>On any page, anywhere on the web. Articles, docs, papers, recipes.</p>
+        <h3>Select useful text</h3>
+        <p>On most web pages, including articles, research papers, guides, and documentation.</p>
         <div class="visual">
           <div class="vis-select">
             The best ideas <span class="selected">survive contact with the page they were written on.</span>
@@ -2732,8 +2495,8 @@ button { font-family: inherit; }
 
       <div class="step">
         <div class="num">2</div>
-        <h3>Click the marker</h3>
-        <p>A small marker appears next to your selection. One click and it's saved.</p>
+        <h3>Review and save</h3>
+        <p>Use the save form to add a note, tags, notebook, or color. Optional Fast Save skips the form.</p>
         <div class="visual">
           <div class="vis-pill">
             <svg width="32" height="24"><use href="#brand-mark"></use></svg>
@@ -2744,7 +2507,7 @@ button { font-family: inherit; }
       <div class="step">
         <div class="num">3</div>
         <h3>Find it again later</h3>
-        <p>The next time you visit the page, your highlight is right where you left it.</p>
+        <p>When you revisit the same page, Web Highlighter restores the passage and keeps its source close by.</p>
         <div class="visual">
           <div class="vis-card">
             <span class="mini-mark">Survive contact with the page they were written on.</span>
@@ -2763,17 +2526,16 @@ button { font-family: inherit; }
 <section class="features" id="features">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-eyebrow">Features</div>
-      <h2>Everything you need. Nothing you don't.</h2>
-      <p>A reading workspace that gets out of the way until you need it.</p>
+      <h2>Everything worth remembering, organized.</h2>
+      <p>Save useful passages, add notes and tags, and return to the full context whenever you need it.</p>
     </div>
 
     <!-- Feature 1 — Highlights persist -->
     <div class="feature">
       <div class="copy">
         <span class="tag">Persistent</span>
-        <h3>Your highlights stay on the page.</h3>
-        <p>Come back tomorrow, next week, next year. We re-paint your highlights the moment the page loads, even if the URL changed or the content moved.</p>
+        <h3>Return to the passage in context.</h3>
+        <p>When you revisit the same page, Web Highlighter restores saved passages when it can, including when nearby page content has moved.</p>
         <p>The side panel slides in beside the article so you can scan everything you've ever saved from the source you're reading right now.</p>
       </div>
       <div class="visual">
@@ -2908,39 +2670,38 @@ button { font-family: inherit; }
 <section class="everything">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-eyebrow">Everything in the panel</div>
-      <h2>Six things, done quietly.</h2>
-      <p>No clutter, no AI gimmicks. Just the workflow you actually use.</p>
+      <h2>Everything you need to remember what you read.</h2>
+      <p>Keep highlights, notes, tags, and page links together in Chrome's side panel.</p>
     </div>
     <div class="tile-grid">
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"></path></svg></div>
-        <h4>One click to save</h4>
-        <p>Select any text on any page. The marker pops up, click once, it's filed.</p>
+        <h3>Save Quotes</h3>
+        <p>Select text on a supported page, then review the quote and its source before saving.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"></path></svg></div>
-        <h4>Notebooks &amp; tags</h4>
+        <h3>Organize</h3>
         <p>Group highlights by project. Color-code each notebook. Add tags inline.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></div>
-        <h4>Find anything fast</h4>
+        <h3>Search</h3>
         <p>Search across every highlight, note, tag, and source. Matches light up in yellow.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><circle cx="16" cy="9" r="2.5"></circle><path d="M3 19c0-3 3-5 6-5s6 2 6 5"></path><path d="M14 16c0-2 2-3 4-3s4 1 4 3"></path></svg></div>
-        <h4>Share with your team</h4>
+        <h3>Collaborate</h3>
         <p>Send a highlight, they reply with comments, you see them live in the panel.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></div>
-        <h4>Fast Save mode</h4>
+        <h3>Fast Save</h3>
         <p>Hit the bolt to skip the form. Goes to Unsorted. Triage when you have time.</p>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><line x1="9" y1="5" x2="9" y2="19"></line></svg></div>
-        <h4>Lives in the side panel</h4>
+        <h3>Side Panel</h3>
         <p>Chrome-native. Always one keyboard shortcut away, never blocking your page.</p>
       </div>
     </div>
@@ -2951,18 +2712,19 @@ button { font-family: inherit; }
 <section class="cta-bottom">
   <div class="wrap">
     <h2>Start <span class="mark">highlighting</span> in 30 seconds</h2>
-    <p>Free Chrome extension. Sign in with Google. Your highlights sync across every browser you're signed in on.</p>
+    <p>Free to install. Sign in with Google to sync your library across Chrome profiles where you use the same account.</p>
     <a class="btn-chrome primary" href="https://chromewebstore.google.com/detail/ahmlmggbpojiclcikmocfjajnknnjija?utm_source=item-share-cb" target="_blank" rel="noopener">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/1280px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" width="18" height="18" style="display:block;flex:none;" />
       Add to Chrome
     </a>
   </div>
 </section>
+</main>
 
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="brand"><svg><use href="#brand-mark"></use></svg> Web Highlighter</div>
+    <a class="brand" href="/"><svg><use href="#brand-mark"></use></svg> Web Highlighter</a>
     <div class="copy">© 2026</div>
     <div class="links">
       <a href="/privacy">Privacy &amp; Terms</a>
